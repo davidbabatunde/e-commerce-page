@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
+body {
+  width: 100vw;
+  min-width: 300px;
+  max-width: 550px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbar {
+  height: 50px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+}
+
+#navbar img {
+  height: 20px;
+}
+
+#hero {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.prev {
+  height: 2rem;
+  width: 2rem;
+  border: 0.5rem solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 1rem;
+  background-color: white;
+}
+
+.next {
+  height: 2rem;
+  width: 2rem;
+  border: 0.5rem solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  right: 1rem;
+  background-color: white;
+}
+
+#content {
+  padding: 0 1.5rem;
+}
+
+.company {
+  color: hsl(26, 100%, 55%);
+  font: bold;
+  margin: 1rem auto;
+}
+
+.sneaker {
+  margin: 1rem auto;
+}
+
+.description {
+  margin: 1rem auto;
+  color: hsl(220, 14%, 75%);
+}
+
+.discount {
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  padding: 0.3rem 0.5rem;
+  margin: 1rem auto;
+}
+
+#cost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(223, 64%, 98%);
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  font: bold;
+}
+
+#mainButton {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+  background-color: hsl(26, 100%, 55%);
   color: white;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.cartImg {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5%)
+    hue-rotate(165deg) brightness(102%) contrast(100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*HELPERS */
+.gap-1 {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: hsl(220, 14%, 75%);
+}
+
+/* MODAL */
+.modalBack {
+  position: fixed;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  background-color: white;
+  opacity: 1;
+  width: 60%;
+  height: 100%;
+  padding: 1.3rem;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  background-color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.closeBtn {
+  margin-bottom: 1rem;
 }
