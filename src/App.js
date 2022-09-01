@@ -10,10 +10,13 @@ import iplus from "./images/icon-plus.svg";
 
 import "./App.css";
 import Modal from "./Components/Modal";
+import Cart from "./Components/Cart";
+
 import { useState } from "react";
 
 function App() {
   const [modalOpen, setmodalOpen] = useState(false);
+  const [cartOpen, setcartOpen] = useState(false);
 
   return (
     <div id="App">
@@ -28,7 +31,14 @@ function App() {
           <img src={logo} alt="logo" />
         </span>
         <span className="gap-1">
-          <img src={icart} alt="cart" />
+          <img
+            className="cartBtn"
+            src={icart}
+            onClick={() => {
+              cartOpen ? setcartOpen(false) : setcartOpen(true);
+            }}
+            alt="cart"
+          />
           <img src={iavatar} alt="profile" />
         </span>
       </div>
@@ -61,8 +71,9 @@ function App() {
           <img className="cartImg" src={icart} alt="cart" />
           <p>Add to cart</p>
         </div>
-        {modalOpen && <Modal closeModal={setmodalOpen} />}
       </div>
+      {modalOpen && <Modal closeModal={setmodalOpen} />}
+      {cartOpen && <Cart />}
     </div>
   );
 }
