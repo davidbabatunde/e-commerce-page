@@ -3,6 +3,10 @@ import logo from "./images/logo.svg";
 import icart from "./images/icon-cart.svg";
 import iavatar from "./images/image-avatar.png";
 import prod1 from "./images/image-product-1.jpg";
+import prod2 from "./images/image-product-2.jpg";
+import prod3 from "./images/image-product-3.jpg";
+import prod4 from "./images/image-product-4.jpg";
+
 import inext from "./images/icon-next.svg";
 import iprevious from "./images/icon-previous.svg";
 import iminus from "./images/icon-minus.svg";
@@ -17,6 +21,8 @@ import { useState } from "react";
 function App() {
   const [modalOpen, setmodalOpen] = useState(false);
   const [cartOpen, setcartOpen] = useState(false);
+  var [count, setCount] = useState(0);
+  var [image, setImage] = useState(prod1);
 
   return (
     <div id="App">
@@ -43,9 +49,37 @@ function App() {
         </span>
       </div>
       <div id="hero">
-        <img className="hero" src={prod1} alt="prod1" />
-        <img className="prev" src={iprevious} alt="previous" />
-        <img className="next" src={inext} alt="next" />
+        <img className="hero" src={image} alt="product" />
+        <img
+          className="prev"
+          onClick={() => {
+            image === prod1
+              ? (image = prod4)
+              : image === prod4
+              ? (image = prod3)
+              : image === prod3
+              ? (image = prod2)
+              : (image = prod1);
+            return setImage(image);
+          }}
+          src={iprevious}
+          alt="previous"
+        />
+        <img
+          className="next"
+          onClick={() => {
+            image === prod1
+              ? (image = prod2)
+              : image === prod2
+              ? (image = prod3)
+              : image === prod3
+              ? (image = prod4)
+              : (image = prod1);
+            return setImage(image);
+          }}
+          src={inext}
+          alt="next"
+        />
       </div>
       <div id="content">
         <p className="company">SNEAKER COMPANY</p>
@@ -63,9 +97,13 @@ function App() {
           <p className="strike">$250.00</p>
         </div>
         <div id="count">
-          <img src={iminus} alt="minus" />
-          <p>0</p>
-          <img src={iplus} alt="plus" />
+          <img
+            src={iminus}
+            onClick={() => (count === 0 ? setCount(0) : setCount(--count))}
+            alt="minus"
+          />
+          <p>{count}</p>
+          <img src={iplus} onClick={() => setCount(++count)} alt="plus" />
         </div>
         <div id="mainButton">
           <img className="cartImg" src={icart} alt="cart" />
