@@ -19,7 +19,12 @@ function App() {
     <div id="App">
       <div id="navbar">
         <span className="gap-1">
-          <img src={imenu} alt="menu" onClick={() => setmodalOpen(true)} />
+          <img
+            className="menuBtn"
+            src={imenu}
+            alt="menu"
+            onClick={() => setmodalOpen(true)}
+          />
           <img src={logo} alt="logo" />
         </span>
         <span className="gap-1">

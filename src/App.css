@@ -23,6 +23,10 @@ body {
   height: 20px;
 }
 
+.menuBtn {
+  cursor: pointer;
+}
+
 #hero {
   position: relative;
   height: 300px;
@@ -167,4 +171,5 @@ body {
 
 .closeBtn {
   margin-bottom: 1rem;
+  cursor: pointer;
 }
