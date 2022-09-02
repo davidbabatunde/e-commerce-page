@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
+import thumb1 from "../images/image-product-1-thumbnail.jpg";
+import idelete from "../images/icon-delete.svg";
 
 function Cart() {
+  const [cartEmpty, setcartEmpty] = useState(false);
+
   return (
     <div className="cart">
       <h3 className="title">Cart</h3>
       <div className="items">
-        <p>Your cart is empty.</p>
+        {cartEmpty ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <>
+            <div className="single">
+              <img className="thumb1" src={thumb1} alt="thumb1" />
+              <span className="c-gap-1">
+                <p className="name">Autumn Limited Edition Sneakers</p>
+                <div className="cost">
+                  <p className="calc">$125.00 x 3</p>
+                  <p className="total">$375.00</p>
+                </div>
+              </span>
+
+              <img
+                className="delete"
+                src={idelete}
+                onClick={() => setcartEmpty(true)}
+                alt="delete"
+              />
+            </div>
+            <button id="checkout">Checkout</button>
+          </>
+        )}
       </div>
     </div>
   );

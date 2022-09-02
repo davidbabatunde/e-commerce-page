@@ -45,7 +45,7 @@ function App() {
             }}
             alt="cart"
           />
-          <img src={iavatar} alt="profile" />
+          <img className="profile" src={iavatar} alt="profile" />
         </span>
       </div>
       <div id="hero">
