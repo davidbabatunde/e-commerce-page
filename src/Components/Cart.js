@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Cart.css";
 import thumb1 from "../images/image-product-1-thumbnail.jpg";
 import idelete from "../images/icon-delete.svg";
 
-function Cart() {
-  const [cartEmpty, setcartEmpty] = useState(false);
-
+function Cart({ number, cartEmpty, setcartEmpty }) {
   return (
     <div className="cart">
       <h3 className="title">Cart</h3>
@@ -19,8 +17,8 @@ function Cart() {
               <span className="c-gap-1">
                 <p className="name">Autumn Limited Edition Sneakers</p>
                 <div className="cost">
-                  <p className="calc">$125.00 x 3</p>
-                  <p className="total">$375.00</p>
+                  <p className="calc">$125.00 x {number}</p>
+                  <p className="total">${125 * number}</p>
                 </div>
               </span>
 

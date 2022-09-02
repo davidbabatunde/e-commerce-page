@@ -47,6 +47,7 @@
 
 .delete {
   height: 20px;
+  cursor: pointer;
 }
 
 #checkout {

@@ -16,13 +16,18 @@ import "./App.css";
 import Modal from "./Components/Modal";
 import Cart from "./Components/Cart";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Order from "./Components/Order";
 
 function App() {
   const [modalOpen, setmodalOpen] = useState(false);
   const [cartOpen, setcartOpen] = useState(false);
   var [count, setCount] = useState(0);
   var [image, setImage] = useState(prod1);
+  const number = useRef(null);
+
+  const [cartEmpty, setcartEmpty] = useState(true);
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
   return (
     <div id="App">
@@ -105,13 +110,31 @@ function App() {
           <p>{count}</p>
           <img src={iplus} onClick={() => setCount(++count)} alt="plus" />
         </div>
-        <div id="mainButton">
+        <div
+          id="mainButton"
+          onClick={() => {
+            count === 0 ? setcartEmpty(true) : setcartEmpty(false);
+            number.current = count;
+            setIsAlertVisible(true);
+            setTimeout(() => {
+              setIsAlertVisible(false);
+            }, 2000);
+            setCount(0);
+          }}
+        >
           <img className="cartImg" src={icart} alt="cart" />
           <p>Add to cart</p>
         </div>
       </div>
       {modalOpen && <Modal closeModal={setmodalOpen} />}
-      {cartOpen && <Cart />}
+      {cartOpen && (
+        <Cart
+          number={number.current}
+          cartEmpty={cartEmpty}
+          setcartEmpty={setcartEmpty}
+        />
+      )}
+      {isAlertVisible && <Order number={number.current} />}
     </div>
   );
 }

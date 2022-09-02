@@ -1,0 +1,11 @@
+.alert {
+  color: white;
+  background-color: hsl(26, 100%, 55%);
+  text-align: center;
+  z-index: 5;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
