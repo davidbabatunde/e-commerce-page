@@ -153,6 +153,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .active {
+    opacity: 0.5;
+  }
+
   .menuBtn {
     display: none;
   }
@@ -194,24 +198,44 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 400px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
 
     #images {
       display: flex;
+      width: 100%;
       justify-content: space-between;
       gap: 1rem;
       img {
-        width: 7.5vw;
+        width: 6vw;
+        height: 6vw;
         border-radius: 1rem;
+      }
+      :hover {
+        opacity: 0.5;
+        border: 1px solid $orange;
       }
     }
   }
 
   .hero {
     object-fit: initial;
+    border-radius: 1rem;
   }
 
   .prev,
   .next {
     display: none;
+  }
+
+  #content {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gap-1 {
+    gap: 2rem;
   }
 }

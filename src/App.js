@@ -94,10 +94,46 @@ function App() {
             alt="next"
           />
           <div id="images">
-            <img className="hero" src={prod1} alt="product" />
-            <img className="hero" src={prod2} alt="product" />
-            <img className="hero" src={prod3} alt="product" />
-            <img className="hero" src={prod4} alt="product" />
+            <img
+              className="hero"
+              id="prod1"
+              src={prod1}
+              onClick={() => {
+                document.getElementById("prod1").classList.toggle("active");
+                setImage(prod1);
+              }}
+              alt="product"
+            />
+            <img
+              className="hero"
+              id="prod2"
+              src={prod2}
+              onClick={() => {
+                document.getElementById("prod2").classList.toggle("active");
+                setImage(prod2);
+              }}
+              alt="product"
+            />
+            <img
+              className="hero"
+              id="prod3"
+              src={prod3}
+              onClick={() => {
+                document.getElementById("prod3").classList.toggle("active");
+                setImage(prod3);
+              }}
+              alt="product"
+            />
+            <img
+              className="hero"
+              id="prod4"
+              src={prod4}
+              onClick={() => {
+                document.getElementById("prod4").classList.toggle("active");
+                setImage(prod4);
+              }}
+              alt="product"
+            />
           </div>
         </div>
         <div id="content">
