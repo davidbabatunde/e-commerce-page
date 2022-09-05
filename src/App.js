@@ -100,7 +100,7 @@ function App() {
           />
           <div id="images">
             <img
-              className="hero"
+              className="hero active"
               id="prod1"
               src={prod1}
               onClick={() => {
