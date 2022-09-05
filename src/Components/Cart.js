@@ -3,7 +3,7 @@ import "./Cart.scss";
 import thumb1 from "../images/image-product-1-thumbnail.jpg";
 import idelete from "../images/icon-delete.svg";
 
-function Cart({ number, cartEmpty, setcartEmpty }) {
+function Cart({ number, cartEmpty, setcartEmpty, setNum }) {
   return (
     <div className="cart">
       <h3 className="title">Cart</h3>
@@ -21,11 +21,13 @@ function Cart({ number, cartEmpty, setcartEmpty }) {
                   <p className="total">${125 * number}</p>
                 </div>
               </span>
-
               <img
                 className="delete"
                 src={idelete}
-                onClick={() => setcartEmpty(true)}
+                onClick={() => {
+                  setcartEmpty(true);
+                  setNum(0);
+                }}
                 alt="delete"
               />
             </div>

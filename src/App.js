@@ -28,6 +28,7 @@ function App() {
 
   const [cartEmpty, setcartEmpty] = useState(true);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
+  var [num, setNum] = useState("");
 
   return (
     <div id="App">
@@ -49,14 +50,18 @@ function App() {
           </div>
         </span>
         <span className="gap-1">
-          <img
-            className="cartBtn"
-            src={icart}
-            onClick={() => {
-              cartOpen ? setcartOpen(false) : setcartOpen(true);
-            }}
-            alt="cart"
-          />
+          <div className="notify">
+            <img
+              className="cartBtn"
+              src={icart}
+              onClick={() => {
+                cartOpen ? setcartOpen(false) : setcartOpen(true);
+              }}
+              alt="cart"
+            />
+            {num > 0 && <p className="notice">{num}</p>}
+          </div>
+
           <img className="profile" src={iavatar} alt="profile" />
         </span>
       </div>
@@ -99,7 +104,10 @@ function App() {
               id="prod1"
               src={prod1}
               onClick={() => {
-                document.getElementById("prod1").classList.toggle("active");
+                document.getElementById("prod1").classList.add("active");
+                document.getElementById("prod2").classList.remove("active");
+                document.getElementById("prod3").classList.remove("active");
+                document.getElementById("prod4").classList.remove("active");
                 setImage(prod1);
               }}
               alt="product"
@@ -109,7 +117,10 @@ function App() {
               id="prod2"
               src={prod2}
               onClick={() => {
-                document.getElementById("prod2").classList.toggle("active");
+                document.getElementById("prod1").classList.remove("active");
+                document.getElementById("prod2").classList.add("active");
+                document.getElementById("prod3").classList.remove("active");
+                document.getElementById("prod4").classList.remove("active");
                 setImage(prod2);
               }}
               alt="product"
@@ -119,7 +130,10 @@ function App() {
               id="prod3"
               src={prod3}
               onClick={() => {
-                document.getElementById("prod3").classList.toggle("active");
+                document.getElementById("prod1").classList.remove("active");
+                document.getElementById("prod2").classList.remove("active");
+                document.getElementById("prod3").classList.add("active");
+                document.getElementById("prod4").classList.remove("active");
                 setImage(prod3);
               }}
               alt="product"
@@ -129,7 +143,10 @@ function App() {
               id="prod4"
               src={prod4}
               onClick={() => {
-                document.getElementById("prod4").classList.toggle("active");
+                document.getElementById("prod1").classList.remove("active");
+                document.getElementById("prod2").classList.remove("active");
+                document.getElementById("prod3").classList.remove("active");
+                document.getElementById("prod4").classList.add("active");
                 setImage(prod4);
               }}
               alt="product"
@@ -166,6 +183,7 @@ function App() {
               onClick={() => {
                 count === 0 ? setcartEmpty(true) : setcartEmpty(false);
                 number.current = count;
+                setNum(number.current);
                 setIsAlertVisible(true);
                 setTimeout(() => {
                   setIsAlertVisible(false);
@@ -186,6 +204,7 @@ function App() {
           number={number.current}
           cartEmpty={cartEmpty}
           setcartEmpty={setcartEmpty}
+          setNum={setNum}
         />
       )}
       {isAlertVisible && <Order number={number.current} />}

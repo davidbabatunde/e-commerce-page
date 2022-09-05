@@ -34,6 +34,21 @@ body {
   cursor: pointer;
 }
 
+.notify {
+  position: relative;
+}
+
+.notice {
+  position: absolute;
+  background-color: $orange;
+  font-size: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  color: $white;
+}
+
 #hero {
   position: relative;
   height: 300px;
