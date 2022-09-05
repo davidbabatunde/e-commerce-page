@@ -1,5 +1,7 @@
+@import "../variables";
+
 .cart {
-  background-color: white;
+  background-color: $white;
   width: 95%;
   position: absolute;
   top: 60px;
@@ -9,7 +11,7 @@
 
 .title {
   padding: 1rem 1.5rem;
-  border-bottom: 0.1px solid hsl(0, 0%, 90%);
+  border-bottom: 1px solid $lightGrayBlue;
 }
 
 .items {
@@ -18,7 +20,7 @@
   min-height: 150px;
   justify-content: center;
   align-items: center;
-  color: hsl(220, 14%, 75%);
+  color: $darkGrayBlue;
   padding: 1rem 1.5rem;
 }
 
@@ -51,8 +53,8 @@
 }
 
 #checkout {
-  color: white;
-  background-color: hsl(26, 100%, 55%);
+  color: $white;
+  background-color: $orange;
   width: 100%;
   padding: 1rem 7rem;
   margin: 1.5rem auto;
@@ -77,5 +79,5 @@
 
 .total {
   font-weight: 700;
-  color: black;
+  color: $black;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Cart.css";
+import "./Cart.scss";
 import thumb1 from "../images/image-product-1-thumbnail.jpg";
 import idelete from "../images/icon-delete.svg";
 

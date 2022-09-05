@@ -1,6 +1,6 @@
 import React from "react";
 import close from "../images/icon-close.svg";
-import "./Modal.css";
+import "./Modal.scss";
 
 function Modal({ closeModal }) {
   return (

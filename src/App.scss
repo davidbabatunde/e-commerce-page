@@ -1,7 +1,9 @@
+@import "./variables";
+
 body {
   width: 100vw;
-  min-width: 320px;
-  max-width: 550px;
+  min-width: 340px;
+  max-width: 1440px;
 }
 
 #root {
@@ -16,7 +18,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1.5rem;
-  background-color: white;
+  background-color: $white;
+}
+
+#desktopMenu {
+  display: none;
 }
 
 #navbar img {
@@ -32,6 +38,10 @@ body {
   position: relative;
   height: 300px;
   width: 100%;
+
+  #images {
+    display: none;
+  }
 }
 
 .hero {
@@ -44,24 +54,24 @@ body {
 .prev {
   height: 2rem;
   width: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid $white;
   border-radius: 50%;
   position: absolute;
   top: 40%;
   left: 1rem;
-  background-color: white;
+  background-color: $white;
   cursor: pointer;
 }
 
 .next {
   height: 2rem;
   width: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid $white;
   border-radius: 50%;
   position: absolute;
   top: 40%;
   right: 1rem;
-  background-color: white;
+  background-color: $white;
   cursor: pointer;
 }
 
@@ -70,7 +80,7 @@ body {
 }
 
 .company {
-  color: hsl(26, 100%, 55%);
+  color: $orange;
   font: bold;
   margin: 1rem auto;
 }
@@ -81,12 +91,12 @@ body {
 
 .description {
   margin: 1rem auto;
-  color: hsl(220, 14%, 75%);
+  color: $darkGrayBlue;
 }
 
 .discount {
-  color: hsl(26, 100%, 55%);
-  background-color: hsl(25, 100%, 94%);
+  color: $orange;
+  background-color: $paleOrange;
   padding: 0.3rem 0.5rem;
   margin: 1rem auto;
 }
@@ -116,8 +126,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: hsl(26, 100%, 55%);
-  color: white;
+  background-color: $orange;
+  color: $white;
   margin: 2rem auto;
   border-radius: 1rem;
   padding: 0.75rem 1rem;
@@ -139,5 +149,69 @@ body {
 
 .strike {
   text-decoration: line-through;
-  color: hsl(220, 14%, 75%);
+  color: $darkGrayBlue;
+}
+
+@media (min-width: 1024px) {
+  .menuBtn {
+    display: none;
+  }
+  #desktopMenu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  #navbar {
+    padding: 1rem 10vw;
+  }
+  #page {
+    display: flex;
+    gap: 7vw;
+    padding: 10vw;
+  }
+  #cost {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #bottom {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  #count {
+    gap: 3rem;
+    margin: 0;
+    width: 50%;
+  }
+  #mainButton {
+    padding: 0.5rem 5rem;
+    margin: 0;
+    width: 70%;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    #images {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      img {
+        width: 7.5vw;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  .hero {
+    object-fit: initial;
+  }
+
+  .prev,
+  .next {
+    display: none;
+  }
 }
