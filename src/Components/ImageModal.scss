@@ -1,0 +1,88 @@
+@import "../variables";
+
+#background {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: $transparentBlack;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+#imageModal {
+  height: 350px;
+  width: 350px;
+  position: relative;
+  align-self: center;
+}
+
+.main {
+  height: 350px;
+  width: 350px;
+  position: relative;
+}
+
+.back {
+  height: 2rem;
+  width: 2rem;
+  border: 0.5rem solid $white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  background-color: $white;
+  cursor: pointer;
+}
+
+.front {
+  height: 2rem;
+  width: 2rem;
+  border: 0.5rem solid $white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  background-color: $white;
+  cursor: pointer;
+}
+
+#images {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.wtf {
+  width: 60px;
+  height: 60px;
+  border-radius: 1rem;
+}
+
+.wtf:hover {
+  opacity: 0.5;
+}
+
+.active {
+  opacity: 0.5;
+}
+
+.kulosa {
+  position: relative;
+  top: -1rem;
+  right: -335px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5%)
+    hue-rotate(165deg) brightness(102%) contrast(100%);
+}
+
+.kulosa:hover {
+  filter: invert(65%) sepia(90%) saturate(3309%) hue-rotate(347deg)
+    brightness(100%) contrast(101%);
+}

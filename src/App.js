@@ -18,6 +18,7 @@ import Cart from "./Components/Cart";
 
 import { useRef, useState } from "react";
 import Order from "./Components/Order";
+import ImageModal from "./Components/ImageModal";
 
 function App() {
   const [modalOpen, setmodalOpen] = useState(false);
@@ -29,6 +30,7 @@ function App() {
   const [cartEmpty, setcartEmpty] = useState(true);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
   var [num, setNum] = useState("");
+  const [imageModal, setimageModal] = useState(false);
 
   return (
     <div id="App">
@@ -67,7 +69,12 @@ function App() {
       </div>
       <div id="page">
         <div id="hero">
-          <img className="hero" src={image} alt="product" />
+          <img
+            className="hero"
+            src={image}
+            onClick={() => setimageModal(true)}
+            alt="product"
+          />
           <img
             className="prev"
             onClick={() => {
@@ -198,6 +205,7 @@ function App() {
         </div>
       </div>
 
+      {imageModal && <ImageModal setimageModal={setimageModal} />}
       {modalOpen && <Modal closeModal={setmodalOpen} />}
       {cartOpen && (
         <Cart
